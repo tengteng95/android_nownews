@@ -37,7 +37,7 @@ public class SignInActivity extends Activity implements OnClickListener{
 	DropEditText dt_username;
 	EditText et_password;
 	Button btn_signin;
-	Button btn_register,btn_deleteDb;
+	Button btn_register;
 	CommonAdapter<User> adapter;
 	SQLiteDatabase db;
 	ProgressBar progressbar;
@@ -56,8 +56,6 @@ public class SignInActivity extends Activity implements OnClickListener{
 		btn_signin.setOnClickListener(this);
 		btn_register.setOnClickListener(this);
 		
-		btn_deleteDb=(Button) findViewById(R.id.signin_activity_btn_deletedb);
-		btn_deleteDb.setOnClickListener(this);
 		
 		progressbar=(ProgressBar) findViewById(R.id.signin_activity_progressbar);
 		txt_progressbar=(TextView) findViewById(R.id.signin_activity_txt_progressbar);
@@ -103,13 +101,6 @@ public class SignInActivity extends Activity implements OnClickListener{
 			break;
 		case R.id.signin_activity_btn_register://注册
 			startActivity(new Intent(SignInActivity.this,RegisterActivity.class));
-			break;
-		case R.id.signin_activity_btn_deletedb:
-			db = SignInActivity.this.openOrCreateDatabase(Utils.DB_NAME,SignInActivity.this.MODE_PRIVATE,null);
-			db.execSQL("drop table "+Utils.TABLE_MSG_NOT_COMPLETE);
-			db.execSQL("drop table "+Utils.TABLE_RECENT_USER);
-	
-			Utils.showToast(SignInActivity.this,"数据库已删除" );
 			break;
 		default:
 			break;

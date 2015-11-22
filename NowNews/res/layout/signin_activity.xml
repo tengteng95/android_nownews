@@ -28,16 +28,7 @@
             drop:hint="用户名" >
         </com.htt.view.DropEditText>
 
-        <!--
-         <EditText
-        android:id="@+id/signin_activity_et_username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/edit_back"
-        android:hint="  用户名"
-        android:textColor="#BDC3C7" />
-        -->
+
 
         <EditText
             android:id="@+id/signin_activity_et_password"
@@ -73,11 +64,7 @@
             android:layout_height="wrap_content"
             android:visibility="gone" />
 
-        <Button
-            android:id="@+id/signin_activity_btn_deletedb"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="删除数据库" />
+
 
         <LinearLayout
             android:layout_width="match_parent"

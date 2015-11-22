@@ -25,6 +25,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Message;
+import android.sax.ElementListener;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -199,7 +200,12 @@ public class MsgNotCompleteFragment extends Fragment implements IXListViewListen
 									listView.setVisibility(View.GONE);
 									txt_no_msg.setVisibility(View.VISIBLE);
 								}
-							} else {
+							}else if(code==4)
+							{//成功，但是没有任何数据
+								listView.setVisibility(View.GONE);
+								txt_no_msg.setVisibility(View.VISIBLE);
+							}
+							else {
 								// 输出错误信息
 								Utils.showToast(context, "从服务器获取未完成消息列表失败：" + msg);
 							}

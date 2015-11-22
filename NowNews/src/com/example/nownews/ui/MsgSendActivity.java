@@ -66,6 +66,7 @@ public class MsgSendActivity extends Activity implements TopBarListener,OnClickL
 	int selected_hour,selected_min;
 	
 	boolean isClockSet=false;//是否设定了闹钟
+	boolean isClockChanged=false;//闹钟时间是否被改变
 	String selected_clock;//设定好的时钟
 	long v_selected_clock;
 	
@@ -128,6 +129,7 @@ public class MsgSendActivity extends Activity implements TopBarListener,OnClickL
 				selected_year=year;
 				selected_month=monthOfYear+1;//monthOfYear取值为0-11，加1后才是真正的月份
 				selected_day=dayOfMonth;
+				isClockChanged=true;
 			}
 		});
 		
@@ -137,6 +139,7 @@ public class MsgSendActivity extends Activity implements TopBarListener,OnClickL
 			public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
 				selected_hour=hourOfDay;
 				selected_min=minute;
+				isClockChanged=true;
 			}
 		});
 	}
@@ -183,6 +186,7 @@ public class MsgSendActivity extends Activity implements TopBarListener,OnClickL
 			if(isClockSet==true)
 			{
 			    object.put("notifyTime", notifytime);
+			    setClock(v_selected_clock);
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -242,7 +246,7 @@ public class MsgSendActivity extends Activity implements TopBarListener,OnClickL
 			{//如果之前没有设置,显示时间和日期选择器，应用按钮文本设置为“应用"
 				btn_apply_clock.setText("应用");
 				showClockUI();
-			}else{
+			}else{//如果之前已经设置，应用按钮文本设置为“取消”
 				btn_apply_clock.setText("取消");
 				showClockUI();
 			}
@@ -278,8 +282,8 @@ public class MsgSendActivity extends Activity implements TopBarListener,OnClickL
 				img_clock.setImageDrawable(Utils.getDrawable(MsgSendActivity.this,R.drawable.clock_purple));
 				hideClockUI();
 				
-				setClock(v_selected_clock);
-			}else{//当前已经设置了闹钟，此时点击的是"取消"按钮
+//				setClock(v_selected_clock);
+			}else{//当前已经设置了闹钟，此时点击的是"取消"按钮或者"修改"按钮
 				isClockSet=false;
 				//img_clock.setImageDrawable(getResources().getDrawable(R.drawable.clock));
 				img_clock.setImageDrawable(Utils.getDrawable(MsgSendActivity.this,R.drawable.clock));
@@ -294,16 +298,10 @@ public class MsgSendActivity extends Activity implements TopBarListener,OnClickL
 	}
 	
 	private void showClockUI(){
-//		img_clock.setVisibility(View.VISIBLE);
-//		img_topIt.setVisibility(View.VISIBLE);
-//		btn_apply_clock.setVisibility(View.VISIBLE);
 		viewPager.setVisibility(View.VISIBLE);
 	}
 	
 	private void hideClockUI(){
-//		img_clock.setVisibility(View.GONE);
-//		img_topIt.setVisibility(View.GONE);
-//		btn_apply_clock.setVisibility(View.GONE);
 		viewPager.setVisibility(View.GONE);
 	}
 	

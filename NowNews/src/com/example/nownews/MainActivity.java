@@ -4,16 +4,19 @@ package com.example.nownews;
 import com.example.nownews.ui.MsgFragment;
 import com.example.nownews.ui.MsgSendFragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity {
 
@@ -101,4 +104,46 @@ public class MainActivity extends FragmentActivity {
 			break;
 		}
 	}
+	
+	@Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  
+    {  
+        if (keyCode == KeyEvent.KEYCODE_BACK )  
+        {  
+            // 创建退出对话框  
+//            AlertDialog isExit = new AlertDialog.Builder(this).create();  
+//            // 设置对话框标题  
+//            isExit.setTitle("系统提示");  
+//            // 设置对话框消息  
+//            isExit.setMessage("确定要退出吗");  
+//            // 添加选择按钮并注册监听  
+//            isExit.setButton("确定", listener);  
+//            isExit.setButton2("取消", listener);  
+//            // 显示对话框  
+//            isExit.show();  
+        	Intent intent = new Intent();
+            intent.setAction("android.intent.action.MAIN");
+            intent.addCategory("android.intent.category.HOME");
+            startActivity(intent);
+  
+        }   
+        return false;  
+    }  
+	
+//    DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener()  
+//    {  
+//        public void onClick(DialogInterface dialog, int which)  
+//        {  
+//            switch (which)  
+//            {  
+//            case AlertDialog.BUTTON_POSITIVE:// "确认"按钮退出程序  
+//                finish();  
+//                break;  
+//            case AlertDialog.BUTTON_NEGATIVE:// "取消"第二个按钮取消对话框  
+//                break;  
+//            default:  
+//                break;  
+//            }  
+//        }  
+//    };   
 }

@@ -50,20 +50,20 @@ public class Utils {
 		return result;
 	}
 	//注册
-	public static final String REGISTER_URL="http://10.12.67.141/api/user/register";
+	public static final String REGISTER_URL="http://222.20.104.112/api/user/register";
 	//登陆
-	public static final String SIGN_IN_URL="http://10.12.67.141/api/user/login";
+	public static final String SIGN_IN_URL="http://222.20.104.112/api/user/login";
 	//发送消息URL
-	public static final String SEND_MESSAGE_URL="http://10.12.67.141/api/message";
+	public static final String SEND_MESSAGE_URL="http://222.20.104.112/api/message";
 	//获取所有消息
-	public static final String GET_MESSAGE_URL="http://10.12.67.141/api/message";
-	public static final String GET_MESSAGE_UNFINISHED="http://10.12.67.141/api/message/unfinished";
-	public static final String GET_MESSAGE_FINISHED="http://10.12.67.141/api/message/finished";
+	public static final String GET_MESSAGE_URL="http://222.20.104.112/api/message";
+	public static final String GET_MESSAGE_UNFINISHED="http://222.20.104.112/api/message/unfinished";
+	public static final String GET_MESSAGE_FINISHED="http://222.20.104.112/api/message/finished";
 	//获取用户发送的所有消息的列表的URL
-	public static final String GET_USER_SEND_LIST_URL="http://10.12.67.141/api/user/message";
+	public static final String GET_USER_SEND_LIST_URL="http://222.20.104.112/api/user/message";
 	
-	public static final String UNREAD_URL="http://10.12.67.141/api/message/unread";
-	public static final String READ_URL="http://10.12.67.141/api/message/read";
+	public static final String UNREAD_URL="http://222.20.104.112/api/message/unread";
+	public static final String READ_URL="http://222.20.104.112/api/message/read";
 	
 	//把上一次下载过的数据保存进数据库，关闭应用再进入时，不必重新请求连接
 	public static SQLiteDatabase create(Context context ,String dbname)

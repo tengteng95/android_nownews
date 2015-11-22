@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.nownews.MainActivity" >
+    
+     <LinearLayout
+        android:id="@+id/msg_main_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/main_txt_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:onClick="doBottomClick"
+            android:clickable="true"
+            android:drawableTop="@drawable/message1"
+            android:text="消息" />
+
+        <TextView
+            android:id="@+id/main_txt_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:onClick="doBottomClick"
+            android:clickable="true"
+            android:drawableTop="@drawable/send2"
+            android:text="发布" />
+    </LinearLayout>
+    
+
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_fragmentContainer"
+        android:layout_above="@id/msg_main_bottom">
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <ImageView android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/item_people_not_read_avatar"
+        android:src="@drawable/ic_launcher"/>
+    
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_people_not_read_txt_username"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/item_people_not_read_avatar"
+        android:text="username"/>
+    
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_people_not_read_btn_notify"
+        android:layout_centerVertical="true"
+        android:text="提醒"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

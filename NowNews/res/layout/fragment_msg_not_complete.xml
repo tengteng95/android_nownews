@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <com.git.xlistview.XListView
+            android:id="@+id/msg_not_complete_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/msg_not_complete_no_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="暂时没有任何消息发布"
+            android:visibility="visible" />
+    </LinearLayout>
+    
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:id="@+id/msg_not_complete_progressbar"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/msg_not_complete_txt_progressbar"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            android:layout_below="@id/msg_not_complete_progressbar"
+            android:text="正在从服务器中获取数据。。。"/>
+    </RelativeLayout>
+
+</FrameLayout>

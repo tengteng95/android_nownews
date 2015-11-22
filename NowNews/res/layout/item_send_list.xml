@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:id="@+id/item_send_list_txt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="2015年10月30日 19：00" />
+    </RelativeLayout>
+    
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_send_list_txt_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="content...."/>
+    
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_list_send_txt_people_not_read"
+            android:layout_centerVertical="true"
+            android:text="12人未读"/>
+        <ImageView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_list_send_img_top_it"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/top_it"/>
+        <ImageView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_list_send_img_clock"
+            android:layout_toLeftOf="@id/item_list_send_img_top_it"
+            android:src="@drawable/clock"/>
+        <ImageView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_list_send_img_trumpet"
+            android:layout_toLeftOf="@id/item_list_send_img_clock"
+            android:src="@drawable/trumpet"/>
+
+    </RelativeLayout>
+    
+
+</LinearLayout>

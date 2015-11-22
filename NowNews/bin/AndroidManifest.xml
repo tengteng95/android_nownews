@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.nownews"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.nownews.ui.SignInActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="com.example.nownews.ui.RegisterActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name="com.example.nownews.ui.MsgSendActivity" />
+        <activity android:name="com.example.nownews.PeopleNotReadActivity"></activity>
+        <activity android:name=".AlarmActivity" />
+        <!-- android:process=":remote": 新开一个进程 -->
+        <receiver android:name=".AlarmReceiver" android:process=":remote"/>
+    </application>
+
+</manifest>

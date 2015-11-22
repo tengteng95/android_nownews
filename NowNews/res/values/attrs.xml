@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TopBar">
+        <attr name="leftButton_text" format="string" />
+        <attr name="leftButton_background" format="color|reference" />
+        <attr name="Title_text" format="string" />
+        <attr name="Title_textColor" format="color" />
+        <attr name="Title_textSize" format="dimension" />
+        <attr name="rightButton_text" format="string" />
+        <attr name="rightButton_background" format="color|reference" />
+    </declare-styleable>
+
+    <attr name="borderRadius" format="dimension" />
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" />
+        <attr name="type" />
+    </declare-styleable>
+    
+    <declare-styleable name="DropEditText">
+        <attr name="drawableRight" format="reference" />
+        <attr name="dropMode">
+            <enum name="flower_parent" value="0" />
+            <enum name="wrap_content" value="1" />
+        </attr>
+        <attr name="hint" format="string|reference" />
+    </declare-styleable>
+
+</resources>

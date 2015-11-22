@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:topbar="http://schemas.android.com/apk/res/com.example.nownews"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fabc"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <com.example.nownews.ui.TopBar
+            android:id="@+id/send_activity_topbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            topbar:Title_text="发消息"
+            topbar:Title_textColor="#ffff"
+            topbar:leftButton_text="返回"
+            topbar:rightButton_text="发布" >
+        </com.example.nownews.ui.TopBar>
+
+        <EditText
+            android:id="@+id/send_activity_et_input"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/background_white"
+            android:minLines="3" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#ffff" >
+
+            <ImageView
+                android:id="@+id/activity_send_img_top_it"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/top_it" />
+
+            <ImageView
+                android:id="@+id/activity_send_img_trumpet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/activity_send_img_top_it"
+                android:src="@drawable/trumpet" />
+
+            <ImageView
+                android:id="@+id/activity_send_img_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/activity_send_img_trumpet"
+                android:src="@drawable/clock" />
+        </RelativeLayout>
+
+        <android.support.v4.view.ViewPager android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:id="@+id/activity_send_viewPager">            
+        </android.support.v4.view.ViewPager>
+       
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ProgressBar
+            android:id="@+id/send_activity_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/send_activity_txt_progrssbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/send_activity_progressbar"
+            android:layout_centerHorizontal="true"
+            android:text="正在连接服务器，请稍后..."
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</FrameLayout>

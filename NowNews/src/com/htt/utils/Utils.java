@@ -187,7 +187,7 @@ public class Utils {
 	public static String getDateFromTimeMillis(long time)
 	{
 		Date date= new Date(time);
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy年-MM月dd日-HH时mm分");
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
 		return formatter.format(date);
 	}
 	
